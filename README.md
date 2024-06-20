@@ -11,3 +11,6 @@ The primary deliverables for this project include:
 The first stage of this project is to outline the architecture of the solution. Here, we propose an ingestion script to parse both <tt>.json</tt> and <tt>.csv</tt> files to extract records that are in valid formats. From here, these are then loaded as part of the EOD batch job, appending new records and amending old ones if applicable. Lastly, additional transforms are performed on the result tables to provide an analytic view:
 
 ![architecture_diagram](docs/architecture_diagram.png)
+
+## Ingestion
+The second stage of this project is to build out an ingestion script for intake of <tt>.csv</tt> and <tt>.json</tt> data sources. The flat files are staged in an Azure Blob Storage container and are referenced through a Python script in Databricks, using Azure Key Vault for managing credentials to access this data. This script is available for view under <tt>src/data_ingest.py</tt>.
